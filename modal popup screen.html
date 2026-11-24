@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #edeef6;
+        }
+        .modal-container{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            pointer-events: none;
+            opacity: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s ease;
+        }
+         .modal-container.show{
+            pointer-events: auto;
+            opacity: 1;
+
+         }
+        .modal{
+            background-color: #fff;
+            padding: 30px 50px;
+            width: 600px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgb(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <button id="open">click me</button>
+    <div class="modal-container" id="modal_container">
+        <div class="modal">
+  <h2>MODAL</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, quam perspiciatis repellat ipsam non nostrum harum odit alias expedita vel vitae, molestiae quisquam. Sunt debitis rem, perferendis corporis consequuntur totam.</p>
+     <button id="close">close me</button>  
+</div>
+    </div>
+    <main>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod illo in maiores tenetur, cum rem nobis reiciendis animi nisi ipsa a nemo, culpa eligendi dolore doloribus dolores officiis soluta aliquam!</p>
+    </main>
+    <script>
+   const open = document.getElementById('open');
+   const modal_container = document.getElementById('modal_container');
+   const close = document.getElementById('close');
+
+ open.addEventListener('click', () => {
+modal_container.classList.add('show');
+ });
+
+ close.addEventListener('click', () => {
+modal_container.classList.remove('show');
+ });
+    </script>
+</body>
+</html>
